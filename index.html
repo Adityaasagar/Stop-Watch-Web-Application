@@ -1,61 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
+<head>
+    <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Fixed Nav - Home</title>
+    <title>My Personal Stopwatch</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
-    <a class="skip-link" href="#main">Skip to content</a>
-    <nav class="site-nav" id="siteNav" role="navigation" aria-label="Main">
-      <div class="nav-inner">
-        <a class="brand" href="index.html">My Site</a>
-        <ul class="menu">
-          <li><a href="index.html" class="active" aria-current="page">Home</a></li>
-          <li><a href="page2.html">Page 2</a></li>
-          <li><a href="#features">Features</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </div>
-    </nav>
+</head>
+<body>
+    <main class="app" aria-labelledby="app-title">
+        <header class="app__header">
+            <div class="logo">
+                <span class="logo__icon">⏱️</span>
+                <h1 id="app-title">My Stopwatch</h1>
+            </div>
+            <p class="app__tagline">Built with ❤️ for precise time tracking</p>
+            <div class="version">v2.1.0</div>
+        </header>
 
-    <main id="main">
-      <section class="hero">
-        <h1>Welcome! 👋</h1>
-        <p>Take a quick scroll — the top bar is user friendly and efficient interface.</p>
-      </section>
+        <section class="display" aria-live="polite" aria-atomic="true">
+            <div class="display__time" id="time-display" role="timer">00:00.00</div>
+            <div class="display__status" id="status-display">Ready to start</div>
+        </section>
 
-      <section id="features" class="content-section">
-        <h2>Features</h2>
-        <p>
-          I have use html , css and java script to make a navigation bar <br>
-          which is efficient and full fill the user need
-        
-        </p>
-      </section>
+        <section class="controls" aria-label="Stopwatch controls">
+            <button id="start-pause" class="btn btn--primary" aria-pressed="false">
+                <span class="btn__icon">▶️</span>
+                <span class="btn__text">Start</span>
+            </button>
+            <button id="lap" class="btn btn--secondary" disabled>
+                <span class="btn__icon">⏱️</span>
+                <span class="btn__text">Lap</span>
+            </button>
+            <button id="reset" class="btn btn--danger" disabled>
+                <span class="btn__icon">🔄</span>
+                <span class="btn__text">Reset</span>
+            </button>
+        </section>
 
-      <section class="content-section">
-        <h2>Nice Navigation Bar</h2>
-        <p>
-          Hover over the links in the top bar to see a soft highlight.
-        </p>
-        <p>
-          The navigation stays fixed at the top, so you always know where you are it can be of greater use for the user.
-        </p>
-      </section>
+        <section class="laps" aria-labelledby="laps-title">
+            <div class="laps__header">
+                <h2 id="laps-title">Lap Times</h2>
+                <div class="laps__stats">
+                    <span id="lap-count">0 laps</span>
+                    <button id="clear-laps" class="btn btn--ghost" disabled>Clear All</button>
+                </div>
+            </div>
+            <ol id="laps-list" class="laps__list" aria-live="polite" aria-relevant="additions removals"></ol>
+        </section>
 
-      <section id="contact" class="content-section">
-        <h2>Contact</h2>
-        <p>
-          Name = Aditya Sagar<br>
-          Phone NO. = +91 98xxxxxxxx.
-        </p>
-      </section>
+        <footer class="footer">
+            <div class="shortcuts">
+                <p>Keyboard shortcuts: <kbd>Space</kbd> start/pause • <kbd>L</kbd> lap • <kbd>R</kbd> reset</p>
+            </div>
+            <div class="signature">
+                <p>Created by <span class="author">Aditya Sagar</span> • <span class="date">2025</span></p>
+            </div>
+        </footer>
     </main>
 
     <script src="script.js"></script>
-  </body>
-  </html>
+</body>
+</html>
 
 
